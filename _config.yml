@@ -3,7 +3,7 @@
 # Site wide configuration
 ####################################
 #
-title: 민송이의 블로그
+title: Minsong's Blog
 email:
 description: 지식을 나누는 블로그입니다 :)
 url: # the base hostname & protocol for your site
@@ -33,7 +33,7 @@ kramdown:
 ####################################
 #
 owner:
-  name: Minsong Kim
+  name: "Minsong Kim"
   avatar: leonids-logo.png
   job: "Software developer"
   bio: "지식을 나누는 블로그입니다 :)"
