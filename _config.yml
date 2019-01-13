@@ -3,9 +3,9 @@
 # Site wide configuration
 ####################################
 #
-title: Leonids
+title: 민송이의 블로그
 email:
-description: A simple and awesome blog theme powered by jekyll.
+description: 지식을 나누는 블로그입니다 :)
 url: # the base hostname & protocol for your site
 keywords: ["blog", "jekyll"]
 
@@ -33,10 +33,10 @@ kramdown:
 ####################################
 #
 owner:
-  name: Leonids
+  name: Minsong Kim
   avatar: leonids-logo.png
-  job: "A jekyll theme"
-  bio: "A simple and awesome blog theme powered by jekyll."
+  job: "Software developer"
+  bio: "지식을 나누는 블로그입니다 :)"
   email:
   disqus-shortname:
   twitter: #username
