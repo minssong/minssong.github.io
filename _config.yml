@@ -3,6 +3,9 @@
 # Site wide configuration
 ####################################
 #
+disqus_url: <https://minsong.disqus.com/admin/>
+disqus_id: <>
+
 title: Minsong's Blog
 email:
 description: 지식을 나누는 블로그입니다 :)
