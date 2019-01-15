@@ -3,8 +3,6 @@
 # Site wide configuration
 ####################################
 #
-disqus_url: <https://minsong.disqus.com>
-disqus_id: <minsong>
 
 title: Minsong's Blog
 email:
@@ -30,6 +28,8 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
+
+
 #
 ###################################
 # Site Owner configuration
@@ -41,7 +41,8 @@ owner:
   job: "NHN Entertainment"
   bio: "지식을 나누는 블로그입니다 :)"
   email: 
-  disqus-shortname:
+  disqus : True
+  disqus-shortname: minsong
   twitter: #username
   facebook: #username
   google:
