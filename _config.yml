@@ -3,8 +3,8 @@
 # Site wide configuration
 ####################################
 #
-disqus_url: <https://minsong.disqus.com/admin/>
-disqus_id: <김민송>
+disqus_url: <https://minsong.disqus.com>
+disqus_id: <minsong>
 
 title: Minsong's Blog
 email:
