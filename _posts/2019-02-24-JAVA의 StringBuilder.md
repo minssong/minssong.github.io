@@ -31,6 +31,7 @@ System.out.println(String1);
 
 이 경우, String을 사용하여 DEF를 더하게 되면 기존에 선언된 ABC에 DEF를 더하는 것이 아니라 새로운 메모리에 ABCDEF가 생겨나고 기존에 ABC는 GC(Garbage collection)에 의해 삭제가 된다.
 따라서 String를 이용하여 지속적으로 문자열을 바꾸는 것은 많은 메모리를 소모하게 된다.
+![image](https://user-images.githubusercontent.com/28076434/53296332-bc590300-3850-11e9-8e64-29942eedd008.png)
 
 
 이를 해결하기 위해 StringBuffer와 StringBuilder를 사용할 수 있다.
