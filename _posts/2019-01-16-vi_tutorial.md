@@ -6,7 +6,7 @@ categories: [Basecamp]
 comments: true
 ---
 
-## Vi tutorial
+# Vi tutorial
 
 ### 커서 이동
 
