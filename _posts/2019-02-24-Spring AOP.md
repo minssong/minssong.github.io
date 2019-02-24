@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "<String AOP>"
+title:  "Spring AOP"
 date:   2019-02-24 17:50:23
 categories: [Basecamp]
 comments: true
 ---
 
-# SpringMVC에서 AOP(Aspect Oriented Programing)란?   
+## SpringMVC에서 AOP(Aspect Oriented Programing)란?   
 이번 DB sharding 미션에서 우리 TF는 AbstractRoutingDataSource를 사용하여 구현하였다. Routing Key를 사용하여 Mapper에서 원하는 DB에 접근하도록 하기 위해 'RoutingMapperAspect' class를 아래와 같이 생성하였다. 
 
 ```java
