@@ -6,7 +6,7 @@ categories: [Basecamp]
 comments: true
 ---
 
-### Spring builder
+### String builder
 CLI를 통해 메일 목록을 조회하는 미션을 진행하던 중 JAVA의 놀라운 StringBuilder에 대해 알게되었다. 각 메일 목록의 메일 리스트를 보여주는 기존 코드는 아래와 같았다.
 ![image](https://user-images.githubusercontent.com/28076434/53295941-5b79fc80-3849-11e9-8122-86586c48c8ac.png)
 
