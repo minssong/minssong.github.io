@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "vi tutorial 교육 정리"
+title:  "<vi tutorial 교육 정리>"
 date:   2019-01-16 21:15:15
 categories: [Basecamp]
 comments: true
