@@ -35,7 +35,7 @@ StringBuffer/StringBuffer는 String 과 다르게 동작한다. 문자열 연산
 아래와 같은 StringBuilder의 사용으로 문자열을 계속 append 해주면서 메모리 낭비 문제를 막을 수 있었다.
 ![image](https://user-images.githubusercontent.com/28076434/53296053-240c4f80-384b-11e9-8706-95d57ccc5863.png)
 
-* 후기
+### 후기
 JAVA에 내장되어있는 많은 라이브러리를 접할수록 그 편리성을 몸소 느끼고 있다!!!!! 주로 사용하던 언어는 원래 JAVA가 아니였지만, 조만간 JAVA로 넘어갈 것 같다 :)
 <!--more-->
 
