@@ -93,6 +93,8 @@ Joinpoint의 부분 집합으로서 실제로 Advice가 적용되는 Jointpoint�
 * Proxy<br>
 대상 객체에 Advice가 적용된 후 생성된 객체
 
+## 후기
+이처럼 어려운 개념들을 코드에 잘 적용시키려면 많은 공부가 필요한 것 같다. 토비의 스프링을 정말 열심히 읽어야겠다..!!
 
 ### 참고
 1. http://blog.naver.com/PostView.nhn?blogId=kbh3983&logNo=220836425242
