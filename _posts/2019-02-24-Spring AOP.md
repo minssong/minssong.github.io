@@ -68,11 +68,11 @@ AOP(Aspect Oriented Programing)는 '관점 지향 프로그래밍'으로 어플�
 Target 클래스에 조인 포인트에 삽입되어져 동작(적용할 기능)할 수 있는 코드를 'Advice'라 한다. Advice를 어디에서 위빙하는지는 뒤에 나오는 PointCut이라는 단위로 정의한다.
 advice는 Pointcut에서 지정한 Jointpoint에서 실행되어야하는 코드이다.
 cp.) 스프링의 Advice 타입
-- Around Advice: Joinpoint 앞과 뒤에서 실행되는 Adcvice
-- Before Advice: Joinpoint 앞에서 실행되는 Advice
-- After Returning Advice: Jointpoint 메서드 호출이 정상적으로 종료된 뒤에 실행되는 Advice
-- After Throwing Advice: 예외가 던져질 때 실행되는 Advice
-- Introduction:  클래스에 인터페이스와 구현을 추가하는 특수한 Advice
+1. Around Advice: Joinpoint 앞과 뒤에서 실행되는 Adcvice
+2. Before Advice: Joinpoint 앞에서 실행되는 Advice
+3. After Returning Advice: Jointpoint 메서드 호출이 정상적으로 종료된 뒤에 실행되는 Advice
+4. After Throwing Advice: 예외가 던져질 때 실행되는 Advice
+5. Introduction:  클래스에 인터페이스와 구현을 추가하는 특수한 Advice
 
 * JoinPoint
 Advice를 적용 가능한 지점을 의미한다. 클래스의 인스턴스 생성 시점', '메소드 호출 시점', '예외 발생 시점'과 같이 어플리케이션을 실행할 때 특정 작업이 시작되는 시점을 'JoinPoint'라고 한다
@@ -82,10 +82,10 @@ Advice를 적용 가능한 지점을 의미한다. 클래스의 인스턴스 생
 Joinpoint의 부분 집합으로서 실제로 Advice가 적용되는 Jointpoint를 나타낸다. 스프링에서는 정규 표현식이나 AspectJ 문법을 이용하여 Pointcut을 정의할 수 있다.
 여러 개의 Joinpoint를 하나로 결합한 것을 Pointcut이라 한다.
 
-- @annotation : 특정 어느테이션을 찾는 JoinPoint 정의
-- execution () : 가장 강력한 지시자로, 리턴, 타입, 메서드, 패키지 등 조합하여 정교한 PointCut 정의
-- within() : 타입 패턴을 이용하여 JoinPoint 정의
-- this : 빈 오브젝트 타입에 JoinPoint 정의
+1. @annotation : 특정 어느테이션을 찾는 JoinPoint 정의
+2. execution () : 가장 강력한 지시자로, 리턴, 타입, 메서드, 패키지 등 조합하여 정교한 PointCut 정의
+3. within() : 타입 패턴을 이용하여 JoinPoint 정의
+4. this : 빈 오브젝트 타입에 JoinPoint 정의
 
 * Advisor
  Advisor와 Pointcut을 하나로 묶어 다루는 것을 Advisor라고 한다. Advisor는 스프링 AOP에만 있는 것인데, 관점 지향에서 관점을 나타내는 개념이라고 할 수 있다.
@@ -94,8 +94,6 @@ Joinpoint의 부분 집합으로서 실제로 Advice가 적용되는 Jointpoint�
 대상 객체에 Advice가 적용된 후 생성된 객체
 
 
-출처: https://devbox.tistory.com/entry/spring-AOP-용어-설명 [장인개발자를 꿈꾸는 :: 기록하는 공간]
-
 ### 참고
-http://blog.naver.com/PostView.nhn?blogId=kbh3983&logNo=220836425242
-https://devbox.tistory.com/entry/spring-AOP-%EC%9A%A9%EC%96%B4-%EC%84%A4%EB%AA%85
+1. http://blog.naver.com/PostView.nhn?blogId=kbh3983&logNo=220836425242
+2. https://devbox.tistory.com/entry/spring-AOP-%EC%9A%A9%EC%96%B4-%EC%84%A4%EB%AA%85
