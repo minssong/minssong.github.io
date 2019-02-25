@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SpringMVC에서 AOP(Aspect Oriented Programing)란?   "
+title:  "SpringMVC에서 AOP(Aspect Oriented Programing)란? (+추가 : CSS 깨지는 오류 해결)       "
 date:   2019-02-24 17:50:23
 categories: [Basecamp]
 comments: true
@@ -93,8 +93,12 @@ Joinpoint의 부분 집합으로서 실제로 Advice가 적용되는 Jointpoint�
 * Proxy<br>
 대상 객체에 Advice가 적용된 후 생성된 객체
 
-## 후기
-이처럼 어려운 개념들을 코드에 잘 적용시키려면 많은 공부가 필요한 것 같다. 토비의 스프링을 정말 열심히 읽어야겠다..!!
+## CSS 깨지는 오류 해결 및 후기
+DB sharding을 메일 읽기, 파일 다운로드에 적용하고 난 후로 Dev와 Real에 배포했을 때, css가 깨지는 오류가 나서 매우 난감했었다. ㅠㅠ Project clean과 Maven clean을 해도 해결되지 않았다. 심지어 기존 브랜치로 돌아가 새로 코드를 다 짰는데도 동일한 오류가 발생했다..!! 그때 문득, 책임님께서 "여기는 css 파일이 static 밑에 없네?" 라고 하셨던 말씀이 생각나 static 폴더 하에 파일들을 옮겼더니 놀랍게도 문제가 해결되었다. 아마 경로 문제 때문에 css 파일을 아예 읽어들이지 못했던 것 같다.. 이렇게 단순히 해결되다니 허무했지만 덕분에 폴더와 파일의 구조도 중요하다는 사실을 깨달았다. 
+static 폴더 하에 다음과 같이 css, imgs, js 파일을 몽땅 옮겼다!!!! 쨋든 엄청난 오류가 해결되서 정말 다행이다<3
+![image](https://user-images.githubusercontent.com/28076434/53310851-e7476380-38f1-11e9-8508-9196feac177d.png)
+
+또, 앞서 설명한 AOP처럼 어려운 개념들을 코드에 잘 적용시키려면 많은 공부가 필요한 것 같다. 토비의 스프링을 정말 열심히 읽어야겠다..!!
 
 ### 참고
 1. http://blog.naver.com/PostView.nhn?blogId=kbh3983&logNo=220836425242
