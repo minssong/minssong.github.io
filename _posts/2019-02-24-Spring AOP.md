@@ -59,14 +59,14 @@ AOP(Aspect Oriented Programing)는 '관점 지향 프로그래밍'으로 어플�
 
 ## AOP 용어
 * Target<br>
-핵심 로직을 구현하는 클래스를 말한다. 충고를 받는 클래스를 대상(target)이라고 한다. 대상은 여러분이 작성한 클래스는 물론, 별도의 기능을 추가하고자 하는 써드파티 클래스가 될 수 있다.
+핵심 로직을 구현하는 클래스로 충고를 받는 클래스를 대상(target)이라고 한다. 대상은 여러분이 작성한 클래스는 물론, 별도의 기능을 추가하고자 하는 써드파티 클래스가 될 수 있다.
 * Aspect (= Advice + Pointcut)<br>
 여러 객체에 공통으로 적용되는 공통 관심 사항을 Aspect라고 한다. 트랜잭션이나 보안 등이 Aspect의 좋은 예이다. Aspect는 AOP의 중심단위, Advice와 Pointcut을 합친 것이다.
 * Advice<br>
 언제 공통 관심 기능을 핵심 로직에 적용할 지를 정의하고 있다. 예를 들어, '메서드를 호출하기 전'(언제)에 '트랜잭션을 시작한다.'(공통기능)기능을 적용한다는 것을 정의하고 있다.
-* Target <br>
+* Advice <br>
 클래스에 조인 포인트에 삽입되어져 동작(적용할 기능)할 수 있는 코드를 'Advice'라 한다. Advice를 어디에서 위빙하는지는 뒤에 나오는 PointCut이라는 단위로 정의한다.
-advice는 Pointcut에서 지정한 Jointpoint에서 실행되어야하는 코드이다.
+advice는 Pointcut에서 지정한 Jointpoint에서 실행되어야하는 코드이다.<br>
 cp.) 스프링의 Advice 타입
 1. Around Advice: Joinpoint 앞과 뒤에서 실행되는 Adcvice
 2. Before Advice: Joinpoint 앞에서 실행되는 Advice
@@ -75,7 +75,7 @@ cp.) 스프링의 Advice 타입
 5. Introduction:  클래스에 인터페이스와 구현을 추가하는 특수한 Advice
 
 * JoinPoint<br>
-Advice를 적용 가능한 지점을 의미한다. 클래스의 인스턴스 생성 시점', '메소드 호출 시점', '예외 발생 시점'과 같이 어플리케이션을 실행할 때 특정 작업이 시작되는 시점을 'JoinPoint'라고 한다
+Advice를 적용 가능한 지점을 의미한다. 클래스의 인스턴스 생성 시점', '메소드 호출 시점', '예외 발생 시점'과 같이 어플리케이션을 실행할 때 특정 작업이 시작되는 시점을 'JoinPoint'라고 한다.
 실행시의 처리 플로우에서 Advice를 위빙하는 포인트를 JointPoint라고 한다. 구체적으로는 메서드 호출이나 예외발생이라는 포인트를 Joinpoint라고 한다.
 
 * Pointcut<br>
@@ -88,7 +88,7 @@ Joinpoint의 부분 집합으로서 실제로 Advice가 적용되는 Jointpoint�
 4. this : 빈 오브젝트 타입에 JoinPoint 정의
 
 * Advisor<br>
- Advisor와 Pointcut을 하나로 묶어 다루는 것을 Advisor라고 한다. Advisor는 스프링 AOP에만 있는 것인데, 관점 지향에서 관점을 나타내는 개념이라고 할 수 있다.
+ Advisor와 Pointcut을 하나로 묶어 다루는 것을 Advisor라고 한다. 단순한 형태의 Aspect라고 볼 수 있다. Advisor는 스프링 AOP에만 있는 것인데, 관점 지향에서 관점을 나타내는 개념이라고 할 수 있다.
 
 * Proxy<br>
 대상 객체에 Advice가 적용된 후 생성된 객체
