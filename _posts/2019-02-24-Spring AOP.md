@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SpringMVC에서 AOP(Aspect Oriented Programing)란? (+추가 : CSS 깨지는 오류 해결)       "
+title:  "Spring에서 AOP(Aspect Oriented Programing)란? (+추가 : CSS 깨지는 오류 해결)       "
 date:   2019-02-24 17:50:23
 categories: [Basecamp]
 comments: true
