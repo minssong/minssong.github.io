@@ -30,3 +30,9 @@ comments: true
 
 
 #### 잡 제출
+* submit() 메서드는 내부의 JobSubmitter 인스턴스를 생성
+* submitJobInternal() 메서드를 호출
+* JobSubmitter의 잡 제출 과정
+1. 리소스 매니저에 맵리듀스 잡 ID로 사용될 새로운 애플리케이션 ID를 
+* 일단 잡을 제출하면 waitForCompletion() 메서드가 1초에 한 번씩 잡의 진행상황을 조사, 변경 내역은 콘솔로 보여줌
+* 잡이 성공적으로 완료되면 잡 카운터를 보여줌
