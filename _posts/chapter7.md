@@ -12,7 +12,7 @@ comments: true
 
 **맵리듀스 잡의 전체 과정**
 
-![image](https://user-images.githubusercontent.com/28076434/56142959-904d3900-5fda-11e9-8acc-007fbc29e789.png)
+![image](https://user-images.githubusercontent.com/28076434/56303083-1f428880-6176-11e9-9e69-5ff444b4afa1.png)
 job 객체의 submit() 메서드 호출로 맵리듀스 잡 실행 가능 (그림의 1번 과정) 
 * 다섯 개의 독립적인 단계
 1. 클라이언트 
@@ -322,3 +322,11 @@ public abstract class OutputCommitter{
 * 몇몇 애플리케이션은 더 유연한 모델을 필요로 하여 맵 또는 리듀스 태스크에서 직접 HDFS와 같은 분산 파일시스템에 출력 파일을 작성함
 * 주의점 : 동일 태스크의 다중 인스턴스가 동일한 파일에 쓰지 않도록 보장(OutputCommitter 프로토콜 이용)
 => 성공적으로 완료된 태스크의 경우 부차적인 파일은 출력 디렉터리에 자동으로 옮겨지지만 실패한 태스크의 파일은 삭제됨
+
+
+
+참고
+https://books.google.co.kr/books?id=MeUlDwAAQBAJ&pg=PA270&lpg=PA270&dq=%ED%95%98%EB%91%A1+%EC%99%84%EB%B2%BD+%EA%B0%80%EC%9D%B4%EB%93%9C4%ED%8C%90#v=onepage&q=%ED%95%98%EB%91%A1%20%EC%99%84%EB%B2%BD%20%EA%B0%80%EC%9D%B4%EB%93%9C4%ED%8C%90&f=false
+https://www.slideshare.net/HyeonSeokChoi/ch6-25777029
+http://mczo.blogspot.com/2012/02/blog-post_8044.html
+https://inking007.tistory.com/entry/YARN-MapReduce-2
