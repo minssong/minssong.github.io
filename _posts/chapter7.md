@@ -271,3 +271,54 @@ os.environ["mapreduce_job_id"]
 * 리듀스 태스크를 중복으로 실행하는 것은 맵 출력을 가져와야 할 뿐더러 클러스터에서 네트워크 트래픽을 심각하게 증가시킴
 
 #### 7.4.3 출력 커미터
+* 하둡 맵 리듀스는 잡과 태스크가 완전히 성공하거나 실패하는 것을 보장하기 위해 커밋 프로토콜을 사용함
+* 기본값은 파일 기반의 맵리듀스에 적합한 FileOutputCommiter이고 사용자 맞춤형으로 변경이 가능함
+**OutputCommitter API**(이전 또는 새로운 맵리듀스 API 모두 동일)
+```java
+public abstract class OutputCommitter{
+  
+  public abstract void setupJob(JobContext jobContext) throws IOException;
+  public void commitJob(JobContext jobContext) throws IOException {}
+  public void abortJob(JobContext jobContext, JobStatus.State state)
+    throws IOException {}
+  public abstract void setupTast(TaskAttemptContext taskContext)
+    throws IOException;
+  public abstract boolean needsTaskCommit(TaskAttemptContext taskContext)
+    throws IOException;
+  public abstract void commitTask(TaskAttemptContext taskContext)
+    throws IOException;
+  public abstract void abortTask(TaskAttemptContext taskContext)
+    throws IOException;
+    }
+}
+```
+
+1. setupJob() 메서드 
+* 잡을 실행하기 전에 호출됨, 일반적으로 초기화를 수행하기 위해 사용됨
+* FileOutputCommitter에서 이 메서드는 최종 출력 디렉터리 ${mapreduce.output.fileouputformat.outputdir}와 태스크 출력을 위한 임시 작업 공간인 _ temporary를 최종 출력 디렉터리의 서브 디렉터리로 생성함
+
+2. commitJob() 메서드
+* 잡이 성공하면 호출됨
+* 임시 작업 공간을 삭제하고 _ SUCCESS라는 빈 마커 파일을 생성하여 파일시스템 클라이언트에 잡이 성공적으로 완료되었음을 알림
+
+3. abortJob() 메서드
+* 만약 잡이 성공하지 않았다면 잡이 실패했는지 또는 강제 종료된 것인지 알려주는 상태 객체와 함께 호출됨
+
+4. setupTask() 메서드
+* 태스크 실행시 호출되지만 기본 구현체는 아무런 일도 하지 않음. 구현체는 태스크 출력을 위해 명명된 임시 디렉터리가 태스크 결과가 쓰여지는 시점에서 생성되기 때문
+
+5. needsTaskCommit() 메서드
+* false를 반환하도록 하여 비활성화 하면 commitTask()와 abortTask()도 호출하지 않음
+
+6. commitTask() 메서드
+* 태스크가 성공하면 호출됨
+* 기본 구현체에서 임시 태스크 출력 디렉터리를 최종 출력 경로 ${mapreduce.output.fileoutputformat.outputdir}로 옮김
+* 그렇지 않은 경우 abortTask()를 호출하여 임시 태스크 출력 디렉터리를 삭제함
+
+프레임워크는 특정 태스크에 대한 여러 태스크 시도 이벤트 중 단 하나만을 커밋, 나머지는 중단시킴
+
+**태스크의 부차적인 파일**
+* 맵과 리듀스 태스크의 출력을 작성하는 일반적인 방법은 키-값 쌍을 수집하는 OutputCollector를 사용하는 것.
+* 몇몇 애플리케이션은 더 유연한 모델을 필요로 하여 맵 또는 리듀스 태스크에서 직접 HDFS와 같은 분산 파일시스템에 출력 파일을 작성함
+* 주의점 : 동일 태스크의 다중 인스턴스가 동일한 파일에 쓰지 않도록 보장(OutputCommitter 프로토콜 이용)
+=> 성공적으로 완료된 태스크의 경우 부차적인 파일은 출력 디렉터리에 자동으로 옮겨지지만 실패한 태스크의 파일은 삭제됨
